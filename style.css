@@ -1,0 +1,123 @@
+/* 1. Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.6;
+    background-color: transparent; /* Allows video to show */
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. Background Video */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* 3. Main Layout */
+.main-content {
+    max-width: 1000px; /* Slightly wider to fit 3 cards better */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 4. Songs Grid System */
+.songs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Keeps them aligned in a grid */
+    margin-bottom: 50px;
+}
+
+.song-card {
+    /* Math: (100% / 3) minus a portion of the gaps */
+    flex: 0 0 calc(33.333% - 14px); 
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.song-card img {
+    width: 100%;
+    height: 180px; /* Forces every image to be the same height */
+    object-fit: cover; /* Crops instead of stretching */
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.song-card h4 {
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+audio {
+    width: 100%; /* Fills the card width */
+    filter: invert(100%);
+    opacity: 0.8;
+}
+
+/* 5. Typography & Headings */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+h2 {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 40px 0 20px 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #3498db;
+    background: linear-gradient(120deg, rgba(52, 152, 219, 0.2) 0%, rgba(52, 152, 219, 0.2) 100%);
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin: 30px 0 10px 0;
+    color: #fff;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    border: 1px solid #333;
+    margin: 20px 0;
+}
+
+p {
+    color: #aaa;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+big {
+    color: #ff4444;
+    font-weight: 700;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 40px 0;
+}
